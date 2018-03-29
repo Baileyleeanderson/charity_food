@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/donate/style.css' %}" media="screen" title="no title"  charset="utf-8">
+    <title>Taste not Waste</title>
+</head>
+<body>
+    <div id='wrap'>
+    <div id='crops'>
+    </div>
+    <div id='all'>
+        <div id='links'>
+                <a id='home' href='/'>Home</a>
+                <a id='home' href='/user_profile'>Your Profile</a>
+                <a id='home' href=''>Logout</a>
+        </div>
+        <h2 id='don_head'>All Donatations Available</h2>
+        <h2 id='char_head'>All Charities</h2>
+    <div id='alldonors'>
+        <table class='donor_table'>
+                <thead >
+                    <tr>
+                        <th>Business Name </th>
+                        <th>Contact Name </th>
+                        <th>Pick Up Date Availble </th>
+                        <th>Pick Up Time </th>
+                        <th>Address </th>
+                        <th>Choose Donation</th>
+                    </tr>
+                </thead>  
+                <tbody>
+                    <tr>
+                        <td>Dans Grocer</td> 
+                        <td>Dan Dan</td> 
+                        <td>March, 1, 2018</td> 
+                        <td>9:00am</td> 
+                        <td>1st st, LA, CA 90266</td> 
+                        <td><a href=''>Add Donation</a></td>    
+                    </tr>  
+                </tbody>  
+            </table>
+    </div>         
+    <div id='allcharities'>
+            <table class='charity_table'>
+                    <thead id='tablehead'>
+                        <tr>
+                            <th>Charity Name </th>
+                            <th>Contact Name </th>
+                            <th>Phone Number </th>
+                            <th>Address </th>
+                        </tr>
+                    </thead>  
+                    <tbody>
+                        <tr>
+                            <td>Happy Peeps</td> 
+                            <td>Julie</td> 
+                            <td>310-000-0000</td> 
+                            <td>2nd st, LA, CA 90266</td>   
+                        </tr>  
+                    </tbody>  
+                </table>
+    </div>         
+    </div>
+    </div>
+</body>
+</html>

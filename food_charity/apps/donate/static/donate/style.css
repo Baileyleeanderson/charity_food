@@ -1,0 +1,135 @@
+#crops{
+    height: 1200px;
+    width:1450px;
+    background-image: url('/static/donate/img/city.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    opacity: 0.5;
+}
+#wrapper{
+    background-image: url('/static/donate/img/farm.jpg');
+    height: 1200px;
+    width: 1290px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+#home{
+     color: white;
+     font-size: 25px;
+     position: relative;
+     top: 15px;
+     text-shadow:
+		-0.5px -0.5px 0 #000,
+		0.5px -0.5px 0 #000,
+		-0.5px 0.5px 0 #000,
+        0.5px 0.5px 0 #000;
+    text-decoration: none;
+    margin-left: 15px;
+}
+.info{
+    /* background: rgb(248, 248, 248);
+    border: black 1px solid; */
+    width: 250px;
+    padding-left: 5px;
+    margin-top: 50px;
+    display: inline-block;
+    margin-left: 50px;
+}
+
+#header{
+    text-align: center;
+    text-shadow:
+		-1px -1px 0 rgb(255, 255, 255),
+		1px -1px 0 rgb(255, 255, 255),
+		-1px 1px 0 rgb(255, 255, 255),
+        1px 1px 0 rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 45px;
+}
+
+#produce{
+    width: 350px;
+    height: 200px;
+    margin-right: 39px;
+    border: 1px solid black;
+    margin-left:50px;
+}
+
+#pic2{
+    height: 200px;
+    margin-right: 39px;
+    border: 1px solid black;
+}
+
+.pics{
+    margin-right: 25px;
+    display: inline-block;  
+}
+#forms{
+    position: absolute;
+    top: 48px;
+    right: 26px;
+    padding: 15px;
+}
+#links{
+    text-align: right;
+    margin-right: 80px;
+    margin-top: 20px;
+}
+#newpickup{
+    display: inline-block;
+    position: absolute;
+    right: 148px;
+    top: 518px;
+}
+#sub{
+    position: absolute;
+    right: 72px;
+    width: 120px;
+    font-size:25px;
+}
+#welcomeinfo{
+    text-align: center;
+    margin-left: 35px;
+    margin-right: 40px;
+    color:black;
+    opacity: .7;
+}
+#don_head{
+    display: inline-block;
+    width: 830px;
+    margin-left: 146px;
+    margin-top: 200px;
+    margin-top: 107px;
+}
+#char_head{
+    display: inline-block;
+    
+}
+#allcharities{
+    display: inline-block;
+}
+#alldonors{
+    display: inline-block;
+    width: 703px;
+    height: 600px;
+    border-right: 1px black solid;
+}
+#all{
+    position: absolute;
+    top: 15px;
+}
+span{
+    color: gray;
+}
+thead{
+    margin-right: 100px;
+}
+.charity_table{
+    position: absolute;
+    top: 206px;
+    right: 145px;
+}
+#tablehead{
+    margin-right: 100px
+}
