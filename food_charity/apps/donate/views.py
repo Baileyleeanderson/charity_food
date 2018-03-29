@@ -19,8 +19,14 @@ def donations_all(request):
     }
     return render(request,'donate/all_donations.html',context)
 def charity(request):
-    
-    return render(request,"donate/charity.html")
+    context = {
+        'picks': Post.objects.all(),
+        'restaurants': Donor.objects.all(),
+        'cities': City.objects.all(),
+        'charities': Charity.objects.all()
+    }
+
+    return render(request,"donate/charity.html", context)
 
 def payment_form(request):
     
