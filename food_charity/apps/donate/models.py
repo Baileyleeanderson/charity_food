@@ -2,19 +2,26 @@ from __future__ import unicode_literals
 from django.db import models
 from datetime import date
 
-class Address(models.Model):
+class City(models.Model):
     city = models.CharField(max_length=80)
-    state = models.CharField(max_length=2)
-    zipcode = models.CharField(max_length=5)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+class State(models.Model):
+    state = models.CharField(max_length=2)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
 
 class Donor(models.Model):
     business_name = models.CharField(max_length=80)
     contact_name = models.CharField(max_length=80)
     phone_number = models.CharField(max_length=10)
     email = models.CharField(max_length=80)
-    donor_address = models.ForeignKey(Address, related_name='addresses_donor', null=True)
+    password = models.CharField(max_length = 100)
+    address = models.CharField(max_length=100,default = '')
+    city = models.ForeignKey(City, related_name="donor_city",null=True)
+    state = models.ForeignKey(State, related_name = "donor_state",null=True)
     admin_level = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -24,7 +31,10 @@ class Charity(models.Model):
     contact_name = models.CharField(max_length=80)
     phone_number = models.CharField(max_length=10)
     email = models.CharField(max_length=80)
-    charity_address = models.ForeignKey(Address, related_name='addresses_charity',null=True)
+    password = models.CharField(max_length = 100)
+    address = models.CharField(max_length=100,default = '')
+    city = models.ForeignKey(City, related_name="charity_city",null=True)
+    state = models.ForeignKey(State, related_name = "charity_state",null=True)
     admin_level = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
