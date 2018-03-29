@@ -4,6 +4,7 @@ from django.contrib import messages
 from datetime import datetime
 import re
 import bcrypt
+import stripe
 
 def index(request):
     
@@ -14,10 +15,23 @@ def donor(request):
 
 def donations_all(request):
     context = {
-        'posts': Post.objects.all()
-        
+        'posts': Post.objects.all()     
     }
     return render(request,'donate/all_donations.html',context)
+def charity(request):
+    
+    return render(request,"donate/charity.html")
+
+def payment_form(request):
+    
+    return render(request, "donate/success.html")
+
+def checkout(request):
+   
+    stripe.api_key = "pk_test_OlNSLZe6l3rBBnfUkT2KIui7"
+    
+
+    return redirect("/charity")
 
 def donate_render(request):
     context = {
