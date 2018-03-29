@@ -13,25 +13,25 @@
             <div class="dropdown">
                 <button class="dropbtn">Restaurants</button>
                 <div class="dropdown-content">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
+                    {% for rest in restaurants %}
+                <a href="#">{{ rest.business_name }}</a>
+                    {% endfor %}
                 </div>
             </div>
             <div class="dropdown">
                     <button class="dropbtn">Search by City</button>
                     <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                        {% for city in cities %}
+                    <a href="#">{{ city.city }}</a>
+                        {% endfor %}
                     </div>
                 </div>
             <div class="dropdown">
                 <button class="dropbtn">Other Charities</button>
                 <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    {% for charity in charities %}
+                    <a href="#">{{ charity.charity_name }}</a>
+                    {% endfor %}
                 </div>
             </div>
             <div class="dropdown">
@@ -44,7 +44,10 @@
             </div>
         </div>
         <div class="pick">
-                <h2>Todays Pick-ups</h2>
+                <h2>Future Pick-ups</h2>
+                {% for pick in picks %}
+                <h4>pick-up time: {{ pick.pickup_time }}</h4>
+                {% endfor %}
             </div>
         <div class="invite">
             <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro.
@@ -60,7 +63,7 @@
         <div class="basket">
             <h2>Your Basket</h2>
         </div>
-        
+        <a href="/success">Subscribe</a>
     </div>
     
 </body>
