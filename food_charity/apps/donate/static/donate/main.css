@@ -1,0 +1,83 @@
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    border: none;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-top: 40px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {background-color: #ddd}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+.background {
+    background-color: rgb(167, 175, 225);
+    height: 800px;
+    background-image: url("http://pondviewinc.com/wp-content/uploads/2014/10/Group-Friends.jpg");
+    background-size: cover;
+}
+.basket {
+    height: 320px;
+    width: 260px;
+    background-color: rgb(176, 176, 176, 0.5);
+    border: 6px solid gray;
+    border-radius: 20px;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 360px;
+    margin-top: 50px;
+}
+.pick {
+    height: 320px;
+    width: 260px;
+    background-color: rgb(176, 176, 176, 0.5);
+    border: 6px solid gray;
+    border-radius: 20px;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 60px;
+    margin-top: 40px;
+}
+h2 {
+    margin-left: 50px;
+}
+.contain {
+    margin-left: 600px;
+}
+h1 {
+    margin-left: 760px;
+}
+.invite {
+    width: 400px;
+    margin-left: 340px;
+    margin-top: 100px;
+    display: inline-block;
+}
+p {
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
