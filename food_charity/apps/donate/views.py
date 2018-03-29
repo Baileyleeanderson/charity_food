@@ -40,3 +40,6 @@ def submit_donation(request):
         'donators': Donor.objects.first()
     }
     return redirect('/donate/home')
+
+
+
