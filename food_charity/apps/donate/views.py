@@ -4,7 +4,9 @@ from django.contrib import messages
 from datetime import datetime
 import re
 import bcrypt
+ 
 # import stripe
+
 
 def index(request):
     return render(request,'donate/index.html')
