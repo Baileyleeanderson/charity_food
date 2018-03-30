@@ -81,3 +81,31 @@ p {
     letter-spacing: 1px;
     line-height: 1.5;
 }
+.move {
+    width: 300px;
+    height: 340px;
+    margin-left: 340px;
+    margin-top: 80px;
+    font-size: 40px;
+    border: 2px solid lightblue;
+    border-radius: 20px;
+}
+form {
+    margin-left: 90px;
+}
+.h3 {
+    letter-spacing: 1px;
+    margin-left: 20px;
+}
+.credit {
+    font-size: 42px;
+    letter-spacing: 2px;
+    margin-left: 250px;
+}
+.picture {
+    background-image: url("https://images.pexels.com/photos/221016/pexels-photo-221016.jpeg?auto=compress&cs=tinysrgb&h=350");
+    background-size: 1000px;
+    width: 1000px;
+    height: 600px;
+    margin-left: 300px;
+}

@@ -41,16 +41,10 @@ class Charity(models.Model):
 
 class Food(models.Model):
     food_name = models.CharField(max_length=80)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-    donors = models.ManyToManyField(Donor, related_name='foods')
     type_of_food = models.CharField(max_length=80, default='')
+    donor = models.ForeignKey(Donor, related_name='foods',null=True)
+    charity = models.ManyToManyField(Charity, related_name='foods')
+    pickup = models.DateField(max_length=8,default='')
+    pickup_time = models.CharField(max_length=10,default='')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-
-class Post(models.Model):
-    pickup = models.DateField(max_length=8)
-    pickup_time = models.CharField(max_length=10)
-    food = models.ForeignKey(Food, related_name='posts',null=True)
-    donor = models.ForeignKey(Food, related_name='donor_posts',null=True)
-    charity = models.ForeignKey(Food, related_name='post_likes',null=True)

@@ -76,10 +76,20 @@
     margin-right: 80px;
     margin-top: 20px;
 }
+#links2{
+    text-align: right;
+    margin-right: 300px;
+    margin-top: 20px;
+}
+#links{
+    text-align: right;
+    margin-right: 80px;
+    margin-top: 20px;
+}
 #newpickup{
     display: inline-block;
     position: absolute;
-    right: 148px;
+    right: 420px;
     top: 518px;
 }
 #sub{
@@ -98,7 +108,7 @@
 #don_head{
     display: inline-block;
     width: 830px;
-    margin-left: 146px;
+    margin-left: 250px;
     margin-top: 200px;
     margin-top: 107px;
 }
@@ -111,7 +121,7 @@
 }
 #alldonors{
     display: inline-block;
-    width: 703px;
+    width: 900px;
     height: 600px;
     border-right: 1px black solid;
 }
@@ -123,13 +133,17 @@ span{
     color: gray;
 }
 thead{
-    margin-right: 100px;
+    margin-right: 50px;
+    
 }
 .charity_table{
     position: absolute;
     top: 206px;
-    right: 145px;
+    right: 261px;
 }
 #tablehead{
-    margin-right: 100px
+   position: relative;
+   left: 200px;
+   
 }
+
