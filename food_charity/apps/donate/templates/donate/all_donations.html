@@ -14,8 +14,7 @@
     </div>
     <div id='all'>
         <div id='links2'>
-                <a id='home' href='/'>Home</a>
-                <a id='home' href='/donor_profile/{{donor.id}}'>Your Profile</a>
+                <a id='home' href='/donate/home'>Home</a>
                 <a id='home' href='/logout'>Logout</a>
         </div>
         <h2 id='don_head'>All Donatations Available</h2>
@@ -31,7 +30,7 @@
                         <th>Pick Up Date</th>
                         <th>Pick Up Time </th>
                         <th>Address </th>
-                        <th>Choose Donation</th>
+            
                     </tr>
                 </thead>  
                 <tbody>
@@ -44,7 +43,7 @@
                         <td>{{food.pickup}}</td> 
                         <td>{{food.pickup_time}}</td> 
                         <td>{{food.donor.address}}<span> </span>{{food.donor.city.city}}<span> </span>{{food.donor.state.state}}</td> 
-                        <td><a href=''>Add Donation</a></td>    
+              
                     {% endfor %}
                     </tr>  
                 </tbody>  

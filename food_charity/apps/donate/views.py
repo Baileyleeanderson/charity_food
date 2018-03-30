@@ -28,21 +28,27 @@ def donations_all(request):
 
 def charity(request):
     context = {
+        'user': Charity.objects.get(id=request.session['id']),
         'restaurants': Donor.objects.all(),
         'cities': City.objects.all(),
-        'charities': Charity.objects.all()
+        'states': State.objects.all(),
+        'charities': Charity.objects.all(),
+        'picks': Food.objects.all(),
+        'baskets': Food.objects.filter(charity=request.session['id'])
     }
 
     return render(request,"donate/charity.html", context)
 
+def add(request, id):
+    this_charity = Charity.objects.get(id=request.session['id'])
+    this_food = Food.objects.get(id=id)
+    this_food.charity.add(this_charity)
+    
+    return redirect("/charity")
 
 def donate_render(request):
-    context = {
-        'donators': Donor.objects.get(id=request.session['id'])
-    }
-    return render(request,'donate/donate.html',context)
-
-def donor_profile(request, donor_id):
+    if not 'id' in request.session:
+        return redirect("/")
     context = {
         'donators': Donor.objects.get(id=request.session['id'])
     }

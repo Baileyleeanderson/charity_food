@@ -9,7 +9,7 @@
 #wrapper{
     background-image: url('/static/donate/img/farm.jpg');
     height: 1200px;
-    width: 1290px;
+    width: 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
@@ -121,7 +121,7 @@
 }
 #alldonors{
     display: inline-block;
-    width: 900px;
+    width: 800px;
     height: 600px;
     border-right: 1px black solid;
 }
@@ -139,7 +139,7 @@ thead{
 .charity_table{
     position: absolute;
     top: 206px;
-    right: 261px;
+    right: 40px;
 }
 #tablehead{
    position: relative;
