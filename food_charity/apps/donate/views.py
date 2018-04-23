@@ -33,7 +33,7 @@ def charity(request):
         'cities': City.objects.all(),
         'states': State.objects.all(),
         'charities': Charity.objects.all(),
-        'picks': Food.objects.all(),
+        'picks': Food.objects.all().exclude(charity=request.session['id']),
         'baskets': Food.objects.filter(charity=request.session['id'])
     }
 
