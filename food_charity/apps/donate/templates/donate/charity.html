@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <title>Charity</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'donate/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'donate/main.css' %}">
 </head>
 <body>
     <div class="background">
-        <h1>Welcome ' charity '</h1>
+        <a href="/success">Subscribe</a>
+        <a href="/">Home</a>
+        <a href="/logout">Logout</a>
+        <h1>Welcome "{{ user.charity_name }}"</h1>
         <div class="contain">
             <div class="dropdown">
                 <button class="dropbtn">Restaurants</button>
@@ -22,7 +25,9 @@
                     <button class="dropbtn">Search by City</button>
                     <div class="dropdown-content">
                         {% for city in cities %}
-                    <a href="#">{{ city.city }}</a>
+                        {% for state in states%}
+                    <a href="#">  {{ city.city }}, {{ state.state }}</a>
+                        {% endfor %}
                         {% endfor %}
                     </div>
                 </div>
@@ -37,18 +42,19 @@
             <div class="dropdown">
                 <button class="dropbtn">Testimonials</button>
                 <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <a href="#">About food insecurity</a>
+                    <a href="#">Getting people to join</a>
                 </div>
             </div>
         </div>
         <div class="pick">
                 <h2>Future Pick-ups</h2>
                 {% for pick in picks %}
-                <h4>pick-up time: {{ pick.pickup_time }}</h4>
+                <h4>Donor: {{ pick.donor.business_name }}</h4>
+                <h4>pick-up time: {{ pick.pickup_time }} <a href="/add/{{pick.id}}">Add to basket</a></h4>
                 {% endfor %}
             </div>
+            
         <div class="invite">
             <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro.
             De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo
@@ -62,8 +68,14 @@
         </div>
         <div class="basket">
             <h2>Your Basket</h2>
+            {% for basket in baskets %}
+            <h4>Restaurant: {{ basket.donor.business_name }}</h4>
+            <h4>{{ basket.type_of_food }}: {{ basket.food_name }}</h4>
+            <h4>Pick at: {{ basket.donor.address }} {{ basket.donor.city.city }}</h4>
+            <h4>Time: {{ basket.pickup_time }}</h4>
+            <hr>
+            {% endfor %}
         </div>
-        <a href="/success">Subscribe</a>
     </div>
     
 </body>

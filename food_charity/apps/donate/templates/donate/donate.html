@@ -20,7 +20,7 @@
     <div id='links'>
         <a id='home' href='/'>Home</a>
         <a id='home' href='/donations/all'>View Donations</a>
-        <a id='home' href=''>Logout</a>
+        <a id='home' href='/logout'>Logout</a>
     </div>
     <h1 id='header'>Welcome To Taste-NOT-Waste</h1>
     <div class='pics'>
@@ -44,13 +44,13 @@
             {% csrf_token %}
             <h3>Food Category: 
                     <select name='category'>
-                            <option value="1">Non-Perishable</option>
-                            <option value="2">Produce</option>
-                            <option value="3">Bakery</option>
-                            <option value="4">Dairy</option>
-                            <option value="5">Soft Drinks</option>
-                            <option value="6">Soup</option>
-                            <option value="7">Chips/Snacks</option>
+                            <option value="Non-Perishable">Non-Perishable</option>
+                            <option value="Produce">Produce</option>
+                            <option value="Bakery">Bakery</option>
+                            <option value="Dairy">Dairy</option>
+                            <option value="Soft Drinks">Soft Drinks</option>
+                            <option value="Soup">Soup</option>
+                            <option value="Chips/Snacks">Chips/Snacks</option>
                     </select>
             </h3>
             <h3>Type Of Food: <input type='text' method='post' name='food'>
@@ -60,26 +60,26 @@
             </h3>
             <h3>Pick Up Time:
                     <select name='time'>
-                            <option value="5">5:00 am</option>
-                            <option value="6">6:00 am</option>
-                            <option value="7">7:00 am</option>
-                            <option value="8">8:00 am</option>
-                            <option value="9">9:00 am</option>
-                            <option value="10">10:00 am</option>
-                            <option value="11">11:00 am</option>
-                            <option value="12">12:00 pm</option>
-                            <option value="13">1:00 pm</option>
-                            <option value="14">2:00 pm</option>
-                            <option value="15">3:00 pm</option>
-                            <option value="16">4:00 pm</option>
-                            <option value="17">5:00 pm</option>
-                            <option value="18">6:00 pm</option>
-                            <option value="19">7:00 pm</option>
-                            <option value="20">8:00 pm</option>
-                            <option value="21">9:00 pm</option>
-                            <option value="22">10:00 pm</option>
-                            <option value="23">11:00 pm</option>
-                            <option value="23">12:00 am</option>
+                            <option value="5:00 am">5:00 am</option>
+                            <option value="6:00 am">6:00 am</option>
+                            <option value="7:00 am">7:00 am</option>
+                            <option value="8:00 am">8:00 am</option>
+                            <option value="9:00 am">9:00 am</option>
+                            <option value="10:00 am">10:00 am</option>
+                            <option value="11:00 am">11:00 am</option>
+                            <option value="12:00 pm">12:00 pm</option>
+                            <option value="1:00 pm">1:00 pm</option>
+                            <option value="2:00 pm">2:00 pm</option>
+                            <option value="3:00 pm">3:00 pm</option>
+                            <option value="4:00 pm">4:00 pm</option>
+                            <option value="5:00 pm">5:00 pm</option>
+                            <option value="6:00 pm">6:00 pm</option>
+                            <option value="7:00 pm">7:00 pm</option>
+                            <option value="8:00 pm">8:00 pm</option>
+                            <option value="9:00 pm">9:00 pm</option>
+                            <option value="10:00 pm">10:00 pm</option>
+                            <option value="11:00 pm">11:00 pm</option>
+                            <option value="12:00 am">12:00 am</option>
                           </select>
             </h3>
             <input id='sub' type='submit' value='Submit Donation'>

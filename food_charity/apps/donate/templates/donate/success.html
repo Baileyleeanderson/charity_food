@@ -2,22 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    
     <title>Payment</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'donate/main.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
 </head>
 <body>
-    <h2>credit card</h2>
-    <form action="/checkout" method="POST">
-        {% csrf_token %}
-        <script
-          src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="pk_test_OlNSLZe6l3rBBnfUkT2KIui7"
-          data-amount="999"
-          data-name="Demo Site"
-          data-description="Example charge"
-          data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-          data-locale="auto">
-        </script>
-      </form>
+    <div class="picture">
+        <h2 class="credit">Thanks for supporting us!</h2>
+        <div class="move">
+            <h3 class="h3">Payment</h3>
+            <h3 class="h3">Subscription</h3>
+            <form action="/checkout" method="POST">
+                {% csrf_token %}
+                <script
+                src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="pk_test_OlNSLZe6l3rBBnfUkT2KIui7"
+                data-amount="999"
+                data-name="Demo Site"
+                data-description="Example charge"
+                data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                data-locale="auto">
+                </script>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

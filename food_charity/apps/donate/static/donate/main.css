@@ -16,7 +16,6 @@
     display: none;
     position: absolute;
     background-color: #f1f1f1;
-    min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
@@ -39,6 +38,7 @@
     height: 800px;
     background-image: url("http://pondviewinc.com/wp-content/uploads/2014/10/Group-Friends.jpg");
     background-size: cover;
+    width: 100%;
 }
 .basket {
     height: 320px;
@@ -48,8 +48,9 @@
     border-radius: 20px;
     display: inline-block;
     vertical-align: top;
-    margin-left: 360px;
+    margin-left: 160px;
     margin-top: 50px;
+    overflow: scroll;
 }
 .pick {
     height: 320px;
@@ -59,25 +60,57 @@
     border-radius: 20px;
     display: inline-block;
     vertical-align: top;
-    margin-left: 60px;
+    margin-left: 40px;
     margin-top: 40px;
+    overflow: scroll;
 }
 h2 {
     margin-left: 50px;
 }
 .contain {
-    margin-left: 600px;
+    margin-left: 420px;
 }
 h1 {
-    margin-left: 760px;
+    margin-left: 540px;
 }
 .invite {
     width: 400px;
-    margin-left: 340px;
-    margin-top: 100px;
+    margin-left: 210px;
+    margin-top: 60px;
     display: inline-block;
 }
 p {
     letter-spacing: 1px;
     line-height: 1.5;
+}
+.move {
+    width: 300px;
+    height: 340px;
+    margin-left: 500px;
+    margin-top: 80px;
+    font-size: 40px;
+    border: 2px solid lightblue;
+    border-radius: 20px;
+}
+form {
+    margin-left: 90px;
+}
+.h3 {
+    letter-spacing: 1px;
+    margin-left: 20px;
+}
+.credit {
+    font-size: 42px;
+    letter-spacing: 1px;
+    margin-left: 410px;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+.picture {
+    background-image: url("https://images.pexels.com/photos/221016/pexels-photo-221016.jpeg?auto=compress&cs=tinysrgb&h=350");
+    background-size: 100%;
+    width: 100%;
+    height: 600px;
+   
+    font-family: 'Nunito Sans', sans-serif;
 }
