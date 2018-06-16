@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {% load static %}
-    <link rel="stylesheet" href="{% static 'donate/index.css' %}" media="screen" title="no title"  charset="utf-8">
     <title>Taste, Not Waster | Food For All</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'donate/index.css' %}" media="screen" title="no title"  charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Semi+Expanded" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
 
@@ -42,39 +44,36 @@
         
                 
     })
-       
-           
-        
-        
-    
-    
     </script>
 </head>
 <body>
-    <div id="wrapper">
-        <div id="main">
-            <div id="title">
-                <h1>Taste, Not Waste</h1>
-            </div>
-            
-            
-            <div id="choose">
-                <h3>Are you a donor or charity?</h3>
-                <!-- <form id = "first_box" action="#" method="POST">
-                    {% csrf_token %} -->
-                    <input class = "select" id = "donor" type = "radio" name = "type" value="donor" class="choose">
-                    <label class = "select" for="donor">Donor</label><br>
-                    <input class = "select"id = "charity" type = "radio" name = "type" value="charity" class="choose">
-                    <label class = "select" for = "charity">Charity</label>
-                    <input id = "select_button" type="submit" value="Register">
-                    <input id = "login_button" type="submit" value="Login">
+    <div id="wrapper" class="container">
+           
 
-                    <!-- <label for = "select_button">Select</label> -->
-                <!-- </form> -->
-                
-            </div>
-            <div id="show_register">
-                
+                <div id="title" class="row justify-content-center">
+                    <h1>Taste, Not Waste</h1>
+                </div>
+                <!--initial box to select who is logging in-->
+                <div id="choose" class="container justify-content-center">
+                    <div class="row justify-content-center">
+                        <h3 class="text-center">Are you a donor or charity?</h3>
+                    </div>
+                    <div id="initial_dialog" class="container">
+                        <div class="row custom-control custom-radio h4">
+                            <input class = "custom-control-input" id = "donor" type = "radio" name = "type" value="donor" class="choose">
+                            <label class = "custom-control-label" for="donor">Donor &nbsp;</label>
+                        </div>
+                        <div class="row custom-control custom-radio h4">
+                            <input class = "custom-control-input"id = "charity" type = "radio" name = "type" value="charity" class="choose">
+                            <label class = "custom-control-label" for = "charity">Charity</label>
+                        </div>
+                    </div>
+                    <div id = "buttons" class = "row justify-content-center">
+                        <input id = "select_button" class = "btn btn-success h5" type="submit" value="Register">
+                        <input id = "login_button" class  = "btn btn-success h5" type="submit" value="Login">
+                    </div>
+                </div>
+            <div id="show_register" class="justify-content-center container">
                     {% for message in messages %}
                     {{message}}
                     {% endfor %}
@@ -118,7 +117,7 @@
                             <td><input class = "bus_reg_input" type="password" name="confirm_pw"></td>
                         </tr>
                     </table>
-                    <input id = "reg_button" type="submit" value="Register">
+                    <input class = "btn btn-success" id = "reg_button" type="submit" value="Register">
                 </form>
             </div>
                 <div id="login">
@@ -183,11 +182,11 @@
                             <td><input class = "charity_input" type="password" name="confirm_pw"></td>
                         </tr>
                     </table>
-                    <input type="submit" class = "charity_reg_button" value="Register">
+                    <input type="submit" class = "charity_reg_button btn btn-success" value="Register">
                 </form>
            
             </div>
-        </div> <!--end of main div-->
+        
         
     </div><!-- end of wrapper -->
     
