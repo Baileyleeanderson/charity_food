@@ -4,44 +4,53 @@ from django.contrib import messages
 from datetime import datetime
 import re
 import bcrypt
-import stripe
+ 
+# import stripe
+
 
 def index(request):
-    
     return render(request,'donate/index.html')
+
+def logout(request):
+    del request.session['id']
+    return redirect('/')
 
 def donor(request):
     return redirect('/donate/home')
 
 def donations_all(request):
-    context = {
-        'posts': Post.objects.all()     
+    context = {  
+        'foods': Food.objects.all(),
+        'charities': Charity.objects.all()
+             
     }
     return render(request,'donate/all_donations.html',context)
+
 def charity(request):
     context = {
-        'picks': Post.objects.all(),
+        'user': Charity.objects.get(id=request.session['id']),
         'restaurants': Donor.objects.all(),
         'cities': City.objects.all(),
-        'charities': Charity.objects.all()
+        'states': State.objects.all(),
+        'charities': Charity.objects.all(),
+        'picks': Food.objects.all().exclude(charity=request.session['id']),
+        'baskets': Food.objects.filter(charity=request.session['id'])
     }
 
     return render(request,"donate/charity.html", context)
 
-def payment_form(request):
+def add(request, id):
+    this_charity = Charity.objects.get(id=request.session['id'])
+    this_food = Food.objects.get(id=id)
+    this_food.charity.add(this_charity)
     
-    return render(request, "donate/success.html")
-
-def checkout(request):
-   
-    stripe.api_key = "pk_test_OlNSLZe6l3rBBnfUkT2KIui7"
-    
-
     return redirect("/charity")
 
 def donate_render(request):
+    if not 'id' in request.session:
+        return redirect("/")
     context = {
-        'donators': Donor.objects.first()
+        'donators': Donor.objects.get(id=request.session['id'])
     }
     return render(request,'donate/donate.html',context)
 
@@ -55,9 +64,11 @@ def submit_donation(request):
         errors = True
     if errors:
         return redirect('/donate/home')
-    request.session['id']= '1'
-    Food.objects.create(food_name=request.POST['food'],type_of_food=request.POST['category'])
-    Post.objects.create(pickup=request.POST['date'],pickup_time=request.POST['time'])
+
+    food = Food.objects.create(food_name=request.POST['food'],type_of_food=request.POST['category'],pickup=request.POST['date'],pickup_time=request.POST['time'])
+    donor = Donor.objects.get(id=request.session['id'])
+    food.donor = donor
+    food.save()
     context = {
         'donators': Donor.objects.first()
     }
@@ -107,7 +118,7 @@ def register_business(request):
             return redirect('/')
         
         hashed = bcrypt.hashpw(request.POST['password'].encode(), bcrypt.gensalt())
-        newDonor = Donor.objects.create(business_name = request.POST['name'],contact_name = request.POST['contact'], phone_number = request.POST['phone'], email = request.POST['email'],password = hashed, admin_level = 1)
+        newDonor = Donor.objects.create(business_name = request.POST['name'],contact_name = request.POST['contact'], phone_number = request.POST['phone'], email = request.POST['email'],password = hashed, admin_level = 1, address=request.POST['address'])
 
         cityList = City.objects.filter(city = request.POST['city'])
         if len(cityList) > 0:  #Check for city in DB
@@ -190,7 +201,7 @@ def register_charity(request):
             return redirect('/')
         
         hashed = bcrypt.hashpw(request.POST['password'].encode(), bcrypt.gensalt())
-        newCharity = Charity.objects.create(charity_name = request.POST['name'],contact_name = request.POST['contact'], phone_number = request.POST['phone'], email = request.POST['email'],password = hashed, admin_level = 2)
+        newCharity = Charity.objects.create(charity_name = request.POST['name'],contact_name = request.POST['contact'], phone_number = request.POST['phone'], email = request.POST['email'],password = hashed, admin_level = 2,address=request.POST['address'])
 
         cityList = City.objects.filter(city = request.POST['city'])
         if len(cityList) > 0:  #Check for city in DB
@@ -206,13 +217,15 @@ def register_charity(request):
         else:
             newState = State.objects.create(state=request.POST['state'])
             newCharity.state = newState
-
         newCharity.save()
-     
-
-       
         request.session['id'] = newCharity.id
         return redirect ('/charity')
     else:
         return redirect('/')
 
+def payment_form(request):
+    return render(request, "donate/success.html")
+
+def checkout(request):
+    stripe.api_key = "pk_test_OlNSLZe6l3rBBnfUkT2KIui7"
+    return redirect("/charity")

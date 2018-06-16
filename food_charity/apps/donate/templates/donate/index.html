@@ -5,70 +5,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {% load static %}
-    <link rel="stylesheet" href="{% static 'donate/index.css' %}" media="screen" title="no title"  charset="utf-8">
     <title>Taste, Not Waster | Food For All</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'donate/index.css' %}" media="screen" title="no title"  charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Semi+Expanded" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+
+    $(document).ready(function()
+    {     
+        $('input[name=type]').change(function()
+        {
+            if (this.checked && this.value == "donor")
+            {
+                $('#select_button').click(function ()
+                {  
+                    $("#choose").css("display","none");
+                    $("#show_register").css("display","block");
+                    // $(this.checked =)
+                })
+            }
+            else if (this.checked && this.value == "charity")
+            {
+                $('#select_button').click(function ()
+                {  
+                    $("#choose").css("display","none");
+                    $("#charity_register").css("display","block");
+                })
+            }
+            if (this.checked)
+            {
+                $('#login_button').click(function (){
+                    $("#choose").css("display","none");
+                    $('#login').css("display","block");
+                })
+            }
+        })
+        
+                
+    })
+    </script>
 </head>
 <body>
-    <div id="wrapper">
-        <div id="main">
-                <h1>Taste, Not Waste</h1>
-            <!-- Image as background background-image in css!-->
-            <!-- <img src = "static/donate/images/supermarket_close_up.jpg" alt="Close-up of veggies"> -->
-            
-            <div id="choose">
-                <h3>Are you a donor or charity?</h3>
-                <form action="#" method="POST">
-                    <input type = "radio" name = "type" value="donor">Donor<br>
-                    <input type = "radio" name = "type" value="charity">Charity<br>
-                    <input type="submit" value="Select">
-                </form>
-            </div>
-            <div id="show_register">
-                {% for message in messages %}
-                {{message}}
-                {% endfor %}
+    <div id="wrapper" class="container">
+           
 
+                <div id="title" class="row justify-content-center" style="margin-bottom: 10%;">
+                    <h1>Taste, Not Waste</h1>
+                </div>
+                <!--initial box to select who is logging in-->
+                <div id="choose" class="container justify-content-center">
+                    <div class="row justify-content-center">
+                        <h3 class="text-center">Are you a donor or charity?</h3>
+                    </div>
+                    <div id="initial_dialog" class="container">
+                        <div class="row custom-control custom-radio h4">
+                            <input class = "custom-control-input" id = "donor" type = "radio" name = "type" value="donor" class="choose">
+                            <label class = "custom-control-label" for="donor">Donor &nbsp;</label>
+                        </div>
+                        <div class="row custom-control custom-radio h4">
+                            <input class = "custom-control-input"id = "charity" type = "radio" name = "type" value="charity" class="choose">
+                            <label class = "custom-control-label" for = "charity">Charity</label>
+                        </div>
+                    </div>
+                    <div id = "buttons" class = "row justify-content-center">
+                        <input id = "select_button" class = "btn btn-success h5" type="submit" value="Register">
+                        <input id = "login_button" class  = "btn btn-success h5" type="submit" value="Login">
+                    </div>
+                </div>
+            <div id="show_register" class="justify-content-center container">
+                    {% for message in messages %}
+                    {{message}}
+                    {% endfor %}
                 <form action="/register/business" method="POST">
                     {% csrf_token %}
                     <table>
                         <tr>
                             <td>Business name:</td>
-                            <td><input type="text" name="name" placeholder="What's your business?"></td>
+                            <td><input class = "bus_reg_input" type="text" name="name" placeholder="What's your business?"></td>
                         </tr>
                         <tr>
                             <td>Contact name:</td>
-                            <td><input type = "text" name = "contact" placeholder="Who are you?"></td>
+                            <td><input class = "bus_reg_input" type = "text" name = "contact" placeholder="Who are you?"></td>
                         </tr>
                         <tr>
                             <td>Phone number:</td>
-                            <td><input type="text" name = "phone" placeholder="5555555555"></td>
+                            <td><input class = "bus_reg_input" type="text" name = "phone" placeholder="5555555555"></td>
                         </tr>
                         <tr>
                             <td>Street Address:</td>
-                            <td><input type="text" name="address" placeholder="123 Street"></td>
+                            <td><input class = "bus_reg_input" type="text" name="address" placeholder="123 Street"></td>
                         </tr>
                         <tr>
                             <td>City:</td>
-                            <td><input type="text" name="city" placeholder="Los Angeles"></td>
+                            <td><input class = "bus_reg_input" type="text" name="city" placeholder="Los Angeles"></td>
                         </tr>
                         <tr>
                             <td>State:</td>
-                            <td><input type="text" name="state" placeholder="CA"></td>
+                            <td><input class = "bus_reg_input" type="text" name="state" placeholder="CA"></td>
                         </tr>
                         <tr>
                             <td>Email:</td>
-                            <td><input type="text" name = "email" placeholder="youremail@email.com"></td>
+                            <td><input class = "bus_reg_input" type="text" name = "email" placeholder="youremail@email.com"></td>
                         </tr>
                         <tr>
                             <td>Password:</td>
-                            <td><input type="password" name="password"></td>
+                            <td><input class = "bus_reg_input" type="password" name="password"></td>
                         </tr>
                         <tr>
                             <td>Confirm Password:</td>
-                            <td><input type="password" name="confirm_pw"></td>
+                            <td><input class = "bus_reg_input" type="password" name="confirm_pw"></td>
                         </tr>
                     </table>
-                    <input type="submit" value="Register">
+                    <input class = "btn btn-success" id = "reg_button" type="submit" value="Register">
                 </form>
             </div>
                 <div id="login">
@@ -77,14 +126,14 @@
                         <table>
                             <tr>
                                 <td>Email:</td>
-                                <td><input type="text" name="login_email"></td>
+                                <td><input class = "charity_input" type="text" name="login_email"></td>
                             </tr>
                             <tr>
                                 <td>Password:</td>
-                                <td><input type="password" name="login_password"></td>
+                                <td><input class = "charity_input" type="password" name="login_password"></td>
                             </tr>
                         </table>
-                        <input type="submit" value="Login">
+                        <input class = "charity_reg_button"type="submit" value="Login">
                     </form>
                 </div>
             
@@ -95,49 +144,49 @@
 
                 <form action="/register/charity" method="POST">
                     {% csrf_token %}
-                    <table>
+                    <table id = "charity_table">
                         <tr>
                             <td>Charity name:</td>
-                            <td><input type="text" name="name" placeholder="What's your charity?"></td>
+                            <td><input class = "charity_input" type="text" name="name" placeholder="What's your charity?"></td>
                         </tr>
                         <tr>
                             <td>Contact name:</td>
-                            <td><input type = "text" name = "contact" placeholder="Who are you?"></td>
+                            <td><input class = "charity_input" type = "text" name = "contact" placeholder="Who are you?"></td>
                         </tr>
                         <tr>
                             <td>Phone number:</td>
-                            <td><input type="text" name = "phone" placeholder="5555555555"></td>
+                            <td><input class = "charity_input" type="text" name = "phone" placeholder="5555555555"></td>
                         </tr>
                         <tr>
                             <td>Street Address:</td>
-                            <td><input type="text" name="address" placeholder="123 Street"></td>
+                            <td><input class = "charity_input" type="text" name="address" placeholder="123 Street"></td>
                         </tr>
                         <tr>
                             <td>City:</td>
-                            <td><input type="text" name="city" placeholder="Los Angeles"></td>
+                            <td><input class = "charity_input" type="text" name="city" placeholder="Los Angeles"></td>
                         </tr>
                         <tr>
                             <td>State:</td>
-                            <td><input type="text" name="state" placeholder="CA"></td>
+                            <td><input class = "charity_input" type="text" name="state" placeholder="CA"></td>
                         </tr>
                         <tr>
                             <td>Email:</td>
-                            <td><input type="text" name = "email" placeholder="youremail@email.com"></td>
+                            <td><input class = "charity_input" type="text" name = "email" placeholder="youremail@email.com"></td>
                         </tr>
                         <tr>
                             <td>Password:</td>
-                            <td><input type="password" name="password"></td>
+                            <td><input class = "charity_input" type="password" name="password"></td>
                         </tr>
                         <tr>
                             <td>Confirm Password:</td>
-                            <td><input type="password" name="confirm_pw"></td>
+                            <td><input class = "charity_input" type="password" name="confirm_pw"></td>
                         </tr>
                     </table>
-                    <input type="submit" value="Register">
+                    <input type="submit" class = "charity_reg_button btn btn-success" value="Register">
                 </form>
            
             </div>
-        </div> <!--end of main div-->
+        
         
     </div><!-- end of wrapper -->
     

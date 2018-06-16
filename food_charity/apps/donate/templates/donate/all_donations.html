@@ -13,33 +13,38 @@
     <div id='crops'>
     </div>
     <div id='all'>
-        <div id='links'>
-                <a id='home' href='/'>Home</a>
-                <a id='home' href='/user_profile'>Your Profile</a>
-                <a id='home' href=''>Logout</a>
+        <div id='links2'>
+                <a id='home' href='/donate/home'>Home</a>
+                <a id='home' href='/logout'>Logout</a>
         </div>
-        <h2 id='don_head'>All Donatations Available</h2>
+        <h2 id='don_head'>All Donations Available</h2>
         <h2 id='char_head'>All Charities</h2>
     <div id='alldonors'>
         <table class='donor_table'>
                 <thead >
                     <tr>
                         <th>Business Name </th>
-                        <th>Contact Name </th>
-                        <th>Pick Up Date Availble </th>
+                        <th>Contact</th>
+                        <th>Food Category</th>
+                        <th>Food</th>
+                        <th>Pick Up Date</th>
                         <th>Pick Up Time </th>
                         <th>Address </th>
-                        <th>Choose Donation</th>
+            
                     </tr>
                 </thead>  
                 <tbody>
+                    {% for food in foods %}
                     <tr>
-                        <td>Dans Grocer</td> 
-                        <td>Dan Dan</td> 
-                        <td>March, 1, 2018</td> 
-                        <td>9:00am</td> 
-                        <td>1st st, LA, CA 90266</td> 
-                        <td><a href=''>Add Donation</a></td>    
+                        <td>{{food.donor.business_name}}</td> 
+                        <td>{{food.donor.contact_name}}</td> 
+                        <td>{{food.type_of_food}}</td>
+                        <td>{{food.food_name}}</td>
+                        <td>{{food.pickup}}</td> 
+                        <td>{{food.pickup_time}}</td> 
+                        <td>{{food.donor.address}}<span> </span>{{food.donor.city.city}}<span> </span>{{food.donor.state.state}}</td> 
+              
+                    {% endfor %}
                     </tr>  
                 </tbody>  
             </table>
@@ -49,18 +54,20 @@
                     <thead id='tablehead'>
                         <tr>
                             <th>Charity Name </th>
-                            <th>Contact Name </th>
+                            <th>Contact</th>
                             <th>Phone Number </th>
                             <th>Address </th>
                         </tr>
                     </thead>  
                     <tbody>
+                        {% for charity in charities %}
                         <tr>
-                            <td>Happy Peeps</td> 
-                            <td>Julie</td> 
-                            <td>310-000-0000</td> 
-                            <td>2nd st, LA, CA 90266</td>   
+                            <td>{{charity.charity_name}}</td> 
+                            <td>{{charity.contact_name}}</td> 
+                            <td>{{charity.phone_number}}</td> 
+                            <td>{{charity.address}}{{charity.city.city}}<span>  </span>{{charity.state.state}}</td>   
                         </tr>  
+                        {% endfor %}
                     </tbody>  
                 </table>
     </div>         
