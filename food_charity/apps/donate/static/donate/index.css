@@ -1,124 +1,92 @@
 
 #wrapper{
-    background: linear-gradient(45deg, lightgoldenrodyellow,lightblue);
-    height: 1500px;  
-    background-image: url('/static/donate/img/supermarket_close_up.jpg');
-    background-size: 100%;
-    
-    background-repeat: no-repeat;
+  
     
 }
-
-#main {
-    width: 100%;
-    /* height: 25%; */
-    display: inline-block;
-    
+body {
+    font-family: 'Encode Sans Semi Expanded', sans-serif;
+    background: url('/static/donate/img/soup.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+img {
+    max-width: 100%;
+    max-height: 100%;
 }
 #choose {
-    width: 535px;
-    height: 150px;
-    display: inline-block;
-    margin-left: 470px;
-    margin-top: 135px;
-    background-color: rgba(240, 248, 255, 0.76);
     color: rgb(55, 115, 47);
-    border-radius: 30px;
-    align-self: center;
+    
 }
+
+#initial_dialog {
+    text-align: center;
+    margin-top: 5%;
+}
+ul {
+    list-style-type: none;
+}
+li {   
+    padding: 10px;
+    margin: 10px;
+ }
+
 #select_button{
-    width: 118px;
     padding:11px 20px;
     font-weight: bold;
-    border: 2px solid black;
-    background-color: rgba(88, 151, 88, 0.794);
     border-radius: 7px;
-    display: inline-block;
-    font-size: 20px;
     color: black;
     text-align: center;
-    position: relative;
-    bottom: 49px;
-    left: 109px;
-
 }
 #login_button {
-        width: 100px;
-        padding:11px 20px;
-        font-weight: bold;
-        border: 2px solid black;
-        margin-left: 50px;
-        background-color: rgba(88, 151, 88, 0.794);
-        border-radius: 7px;
-        display: inline-block;
-        font-size: 20px;
-        color: black;
-        text-align: center;
-        position: relative;
-        bottom: 49px;
-        left: 71px;
+    padding:11px 20px;
+    font-weight: bold;
+    border-radius: 7px;
+    color: black;
+    text-align: center;
+    margin-left: 5px;
+}
+
+#buttons {
+    margin-top: 7%;
 }
 .choose {
-    margin-left: 90px;
-    margin-top: 10px;
     display: inline-block;
     font-size: 20px;
 }
 h1 {
     font-weight: bold;
-    font-size: 75px;
+    font-size: 7vw;
     text-align: center;
-    color: rgb(187, 23, 3);
-}
-#title {
-    background-color: rgba(220, 220, 220, 0.781);
-    width: 565px;
-    margin-left: 455px;
-    border-radius: 13px;
+    color: black;
 }
 h3 {
-    margin-left: 20px;
-    font-size: 40px;
-    margin-top: 8px;
-    margin-left: 25px
-
+    font-size: 4vw;
 }
+
 #first_box {
     position: relative;
     bottom: 37px;
 }
 
-.select{
-    font-size: 30px;
-    position: relative;
-    bottom: 35px;
-    margin-left: 20px;
-    left: 60px;
-}
-
 #show_register{
-    width: 400px;
-    margin-left: 540px;
-    margin-top: 270px;
-    position: relative;
-    bottom: 195px;
     font-size: 25px;
     display:none;
-    background-color: rgba(240, 248, 255, 0.76);
-    color: rgb(55, 115, 47);
-    border-radius: 30px;
+    color: black;
+    text-align: -webkit-center;
+}
+#show_register,input {
+    font-size: initial;
 }
 #charity_register{
-    width: 400px;
-    margin-left: 540px;
-    margin-top: 270px;
-    position: relative;
-    bottom: 195px;
-    font-size: 25px;
     display:none;
-    background-color: rgba(240, 248, 255, 0.76);
-    color: rgb(55, 115, 47);
-    border-radius: 30px;
+    font-size: 25px;
+    color: black;
+    text-align: -webkit-center;
+}
+#charity_register,input {
+    font-size: initial;
 }
 .bus_reg_input {
     margin-top:15px;
@@ -127,39 +95,23 @@ h3 {
     border-radius: 10px;
 }
 #reg_button {
-    width: 113px;
-    padding: 20px;
-    border: 2px solid white;
-    background-color: green;
+    padding: 15px;
     border-radius: 7px;
     font-size: 20px;
     margin-top: 20px;
-    margin-left: 146px;
-    margin-bottom: 22px;
+   
 }
 #login {
-    width: 330px;
-    margin-left: 540px;
-    margin-top: 270px;
-    position: relative;
-    bottom: 195px;
-    font-size: 25px;
+    font-size: 3vw;
     display:none;
-    background-color: rgba(240, 248, 255, 0.76);
     color: rgb(55, 115, 47);
-    border-radius: 8px;
+    text-align: -webkit-center;
 }
 .charity_reg_button {
     margin-top:15px;
-    height: 70px;
     border-radius: 10px;
-    background: green;
-    font-size: 25px;
-    margin-left: 138px;
-    width: 129px;
-    padding: 20px;
-    border: 2px solid white;
-    margin-bottom: 13px;
+    font-size: 20px;
+    padding: 10px;
 }
 #charity_table {
     height: 10px;
