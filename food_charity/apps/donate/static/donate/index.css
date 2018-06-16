@@ -1,8 +1,4 @@
 
-#wrapper{
-  
-    
-}
 body {
     font-family: 'Encode Sans Semi Expanded', sans-serif;
     background: url('/static/donate/img/soup.jpg') no-repeat center center fixed; 
@@ -19,7 +15,9 @@ img {
     color: rgb(55, 115, 47);
     
 }
-
+#choose, label {
+    font-size: 3vw;
+}
 #initial_dialog {
     text-align: center;
     margin-top: 5%;
@@ -38,6 +36,7 @@ li {
     border-radius: 7px;
     color: black;
     text-align: center;
+    font-size: 3vw;
 }
 #login_button {
     padding:11px 20px;
@@ -46,14 +45,16 @@ li {
     color: black;
     text-align: center;
     margin-left: 5px;
+    font-size: 3vw;
 }
 
 #buttons {
-    margin-top: 7%;
+    margin-top: 10%;
 }
 .choose {
     display: inline-block;
     font-size: 20px;
+    margin-top: 10%;
 }
 h1 {
     font-weight: bold;
@@ -75,6 +76,7 @@ h3 {
     display:none;
     color: black;
     text-align: -webkit-center;
+    margin-top: -9%;
 }
 #show_register,input {
     font-size: initial;
@@ -84,6 +86,7 @@ h3 {
     font-size: 25px;
     color: black;
     text-align: -webkit-center;
+    margin-top: -9%;
 }
 #charity_register,input {
     font-size: initial;
@@ -121,4 +124,13 @@ h3 {
     height: 30px;
     width: 200px;
     border-radius: 10px;
+}
+@media (max-width: 425px) {
+    #reg_button {
+        font-size: 4vw;
+    }
+    .charity_reg_button {
+        font-size: 4vw;
+    }
+
 }
