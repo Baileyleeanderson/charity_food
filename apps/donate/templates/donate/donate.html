@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        {% load static %}
+        <link rel="stylesheet" href="{% static '/donate/donate.css' %}" media="screen" title="no title"  charset="utf-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+        <title>Taste not Waste</title>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message %} class="{{ message }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+<div id='wrapper'>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #97a6b1;">
+        <a id="title" class="navbar-brand" href="">Taste-Not-Waste</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <a class="nav-link" href="/donate/home">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/donations/all">View All Donations</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/logout">Logout</a>
+        </li>
+        </ul>
+        <span id="support" class="navbar-text">
+        Thank You For Your Support!
+        </span>
+    </div>
+    </nav>    
+    <div class='picsdonate'>
+        <img class='picfood' src="{% static 'donate/img/produce.jpeg' %}">
+    </div>
+    <div class='picsdonate2'>
+        <img class='picfood2' src="{% static 'donate/img/donate_food.jpg' %}">
+    </div>
+    <div class='picsdonate3'>
+        <img class='picfood3' src="{% static 'donate/img/bread_d.jpg' %}">
+    </div>
+    <!-- <h2 id='welcomeinfo'>Taste-NOT-Waste is a non-profit website that connects local charities and  food establishments together for a wonderful cause! We appreciate your thoughtfulness and are very excited to have your business apart of this movement!</h2> -->
+    
+    
+    <h3 id='newdonate'>Upload New Donation Pickup</h3>
+                                        <!-- #make sure to change request.session -->
+        <form id='forms' action='/submit_donatation' method='post'>
+            {% csrf_token %}
+            <h5>Food Category: 
+                <select name='category'>
+                        <option value="Non-Perishable">Non-Perishable</option>
+                        <option value="Produce">Produce</option>
+                        <option value="Bakery">Bakery</option>
+                        <option value="Dairy">Dairy</option>
+                        <option value="Soft Drinks">Soft Drinks</option>
+                        <option value="Soup">Soup</option>
+                        <option value="Chips/Snacks">Chips/Snacks</option>
+                </select>
+            </h5>
+            <h5>Type Of Food: <input type='text' method='post' name='food'>
+            </h5>
+            <h5>Pick Up Date: 
+                <input type='date' name='date'>
+            </h5>
+            <h5>Pick Up Time:
+                <select name='time'>
+                    <option value="5:00 am">5:00 am</option>
+                    <option value="6:00 am">6:00 am</option>
+                    <option value="7:00 am">7:00 am</option>
+                    <option value="8:00 am">8:00 am</option>
+                    <option value="9:00 am">9:00 am</option>
+                    <option value="10:00 am">10:00 am</option>
+                    <option value="11:00 am">11:00 am</option>
+                    <option value="12:00 pm">12:00 pm</option>
+                    <option value="1:00 pm">1:00 pm</option>
+                    <option value="2:00 pm">2:00 pm</option>
+                    <option value="3:00 pm">3:00 pm</option>
+                    <option value="4:00 pm">4:00 pm</option>
+                    <option value="5:00 pm">5:00 pm</option>
+                    <option value="6:00 pm">6:00 pm</option>
+                    <option value="7:00 pm">7:00 pm</option>
+                    <option value="8:00 pm">8:00 pm</option>
+                    <option value="9:00 pm">9:00 pm</option>
+                    <option value="10:00 pm">10:00 pm</option>
+                    <option value="11:00 pm">11:00 pm</option>
+                    <option value="12:00 am">12:00 am</option>
+                </select>
+            </h5>
+            <input class="btn btn-primary" type='submit' value='Submit Donation'>
+        </form>
+  
+    <div class='info'>        
+        <h4 class='bizinfo'>Business Name: {{donators.business_name}}</h4>
+        <h4 class='bizinfo'>Conact Name: {{donators.contact_name}}</h4>
+        <h4 class='bizinfo'>Email: {{donators.email}}</h4>
+        <h4 class='bizinfo'>Phone: {{donators.phone_number}}</h4>
+    </div>
+</div>
+</body>
+</html>
