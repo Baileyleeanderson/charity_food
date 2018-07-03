@@ -9,6 +9,7 @@ import bcrypt
 
 
 def index(request):
+   
     return render(request,'donate/index.html')
 
 def logout(request):
@@ -140,16 +141,16 @@ def register_business(request):
     else:
         return redirect('/')
 
-def login(request):
+def login_business(request):
     if request.method == "POST":
-        donorList = Donor.objects.filter(email = request.POST['login_email'])
+        donorList = Donor.objects.filter(email = request.POST['login_email_bus'])
         if len(donorList) > 0:
             donor = donorList[0]
         else:
             messages.error(request,"Invalid credentials")
             return redirect('/')
 
-        if bcrypt.checkpw(request.POST['login_password'].encode(),donor.password.encode()):
+        if bcrypt.checkpw(request.POST['login_password_bus'].encode(),donor.password.encode()):
             request.session['id'] = donor.id
             return redirect('/donor')
         else:
@@ -157,7 +158,25 @@ def login(request):
             return redirect('/')
     else:
         return redirect('/')
-    
+
+def login_charity(request):
+    if request.method == "POST":
+        charityList = Charity.objects.filter(email = request.POST['login_email_char'])
+        if len(charityList) > 0:
+            charity = charityList[0]
+        else:
+            messages.error(request, "Invalid credentials")
+            return redirect('/')
+        
+        if bcrypt.checkpw(request.POST['login_password_char'].encode(),charity.password.encode()):
+            request.session['id'] = charity.id
+            return redirect('/charity')
+        else:
+            messages.error(request, "Invalid credentials")
+            return redirect('/')
+    else:
+        return redirect('/')
+
 def register_charity(request):
     if request.method == "POST":
         # validations
@@ -165,7 +184,7 @@ def register_charity(request):
         error = False
         if len(request.POST['name']) < 1:
             error = True
-            messages.error(request, "Business name field must not be empty")
+            messages.error(request, "Charity name field must not be empty")
         if len(request.POST['contact']) < 1:
             error = True
             messages.error(request, "Contact name field must not be empty")
@@ -217,6 +236,7 @@ def register_charity(request):
         else:
             newState = State.objects.create(state=request.POST['state'])
             newCharity.state = newState
+            print newCharity
         newCharity.save()
         request.session['id'] = newCharity.id
         return redirect ('/charity')

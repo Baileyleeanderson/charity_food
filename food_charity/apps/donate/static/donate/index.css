@@ -29,6 +29,10 @@ li {
     padding: 10px;
     margin: 10px;
  }
+ .errors {
+     color: black;
+     text-align: center;
+ }
 
 #select_button{
     padding:11px 20px;
@@ -104,7 +108,13 @@ h3 {
     margin-top: 20px;
    
 }
-#login {
+#login_business {
+    font-size: 3vw;
+    display:none;
+    color: rgb(55, 115, 47);
+    text-align: -webkit-center;
+}
+#login_charity {
     font-size: 3vw;
     display:none;
     color: rgb(55, 115, 47);
