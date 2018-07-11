@@ -2,10 +2,11 @@
 #wrapper{
     background-image: url('/static/donate/img/donatehomebg_veggies.jpg');
     background-size: cover;
-    width:1800px;
-    height: 1000px;
+    width:1905px;
+    height: 1500px;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    overflow-x: hidden;
 }
 #home{
      color: white;
@@ -71,7 +72,6 @@
 }
 #forms{ 
     padding: 15px;
-    border: #97a6b1 solid 2px;
     border-radius: 29px;
     color: white;
     opacity: 0.85;
@@ -82,6 +82,7 @@
     position: absolute;
     top: 308px;
     left: 200px;
+    text-overflow: inherit; 
 }
 #newdonate{
     position: relative;
