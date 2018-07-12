@@ -1,0 +1,42 @@
+#wrap{
+    background-image: url('/static/donate/img/donatebg.jpg');
+    background-size: cover;
+    width:1800px;
+    height: 1500px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+li{
+    margin-right: 50px;
+}
+#support{
+    margin-right: 240px;
+}
+#left{
+    margin-left: 15px;
+    width: 800px;
+    height: 1300px;
+    text-overflow: scroll;
+    border: black 2px solid;
+    display: inline-block;
+    opacity: 0.6;
+}
+#right{
+    margin-left: 30px;
+    width: 800px;
+    height: 1300px;
+    text-overflow: scroll;
+    border: black 2px solid;
+    display: inline-block;
+    opacity: 0.8;
+}
+#don_head{
+    display: inline-block;
+    width: 830px;
+    margin-left: 250px;
+    margin-top: 50px;
+}
+#char_head{
+    display: inline-block;
+    margin-left: 80px;
+}

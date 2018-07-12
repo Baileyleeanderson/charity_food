@@ -1,0 +1,117 @@
+
+#wrapper{
+    background-image: url('/static/donate/img/donatehomebg_veggies.jpg');
+    background-size: cover;
+    width:1905px;
+    height: 1500px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+#home{
+     color: white;
+     font-size: 25px;
+     position: relative;
+     top: 15px;
+     text-shadow:
+		-0.5px -0.5px 0 #000,
+		0.5px -0.5px 0 #000,
+		-0.5px 0.5px 0 #000,
+        0.5px 0.5px 0 #000;
+    text-decoration: none;
+    margin-left: 15px;
+}
+#title{
+    margin-left: 25px;
+    margin-right: 52px;
+}
+#support{
+    margin-right: 240px;
+}
+.picsdonate{
+    margin-right: 210px;
+    text-align: right;
+    margin-top: 25px;
+}
+.picfood{
+    width: 300px;
+    border: 2px solid #97a6b1;  
+}
+.picsdonate2{
+    margin-right: 210px;
+    text-align: right;
+    margin-top: 25px;
+}
+.picfood2{
+    width: 300px;
+    border: 2px solid #97a6b1;
+    height: 159px;  
+}
+.picsdonate3{
+    margin-right: 210px;
+    text-align: right;
+    margin-top: 25px;
+}
+.picfood3{
+    width: 300px;
+    border: 2px solid #97a6b1;
+    height: 159px;  
+}
+#produce{
+    width: 350px;
+    height: 200px;
+    margin-right: 39px;
+    border: 1px solid black;
+    margin-left:50px;
+}
+
+#pic2{
+    height: 200px;
+    margin-right: 39px;
+    border: 1px solid black;
+}
+#forms{ 
+    padding: 15px;
+    border-radius: 29px;
+    color: white;
+    opacity: 0.85;
+    width: 320px;
+    height: 314px;
+    display: inline-block;
+    margin-left: 723px;
+    position: absolute;
+    top: 308px;
+    left: 200px;
+    text-overflow: inherit; 
+}
+#newdonate{
+    position: relative;
+    left: 904px;
+    bottom: 350px;
+    color: #d0d5da;
+    text-shadow: -0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.5px 0.5px 0 #000, 0.5px 0.5px 0 #000;
+    text-decoration: none;
+}
+input{
+    width:100%;
+}
+select{
+    width: 100%;
+}
+li{
+    margin-right: 50px;
+}
+.info{
+    color: #d0d5da;
+    text-align: right;
+    margin-right: 213px;
+    margin-top: 20px;
+}
+.bizinfo{
+    font-size: 25px;
+    text-shadow:
+		-0.5px -0.5px 0 #000,
+		0.5px -0.5px 0 #000,
+		-0.5px 0.5px 0 #000,
+        0.5px 0.5px 0 #000;
+}
